@@ -1,3 +1,5 @@
+from pprint import pprint
+
 from aiogram import Router
 from aiogram.types import Message
 from aiogram.filters import Command, CommandStart
@@ -9,6 +11,7 @@ router = Router()
 
 @router.message(CommandStart())
 async def process_start_command(message: Message):
+    pprint(message)
     await message.answer(text=LEXICON_RU['/start'])
 
 
